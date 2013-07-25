@@ -1,0 +1,29 @@
+{
+  "builders":[{
+    "type": "virtualbox",
+    "guest_os_type": "RedHat_64",
+    "iso_url": "/Users/duck1218/Downloads/Fedora-19-x86_64-DVD.iso",
+    "iso_checksum": "638d69c23621d5befc714bcd66b0611e",
+    "iso_checksum_type": "md5",
+    "ssh_username": "vagrant",
+    "ssh_password": "vagrant",
+    "ssh_wait_timeout": "6000s",
+    "vm_name": "box",
+    "http_directory": "./",
+    "boot_wait": "30s",
+    "boot_command":[
+      "<esc><wait>",
+      "linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg ",
+      "<enter><wait>"
+    ]
+  }],
+  "post-processors": [{
+    "type": "vagrant",
+    "output": "./Fedora19.box",
+    "vagrantfile_template": "./Vagrantfile"
+  }],
+  "provisioners": [{
+    "type": "shell",
+    "script": "setup.sh"
+  }]
+}
