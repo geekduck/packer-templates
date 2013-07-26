@@ -3,7 +3,7 @@
 sudo sed -i "s/^.*requiretty/#Defaults requiretty/" /etc/sudoers
 sudo sed -i "s/#UseDNS yes/UseDNS no/" /etc/ssh/sshd_config
 
-sudo yum -y install gcc make automake autoconf libtool gcc-c++ kernel-headers-`uname -r` kernel-devel-`uname -r` zlib-devel openssl-devel readline-devel sqlite-devel nfs-utils bind-utils wget dkms curl bzip2
+sudo yum -y install gcc make automake autoconf libtool gcc-c++ kernel-headers-`uname -r` kernel-devel-`uname -r` zlib-devel openssl-devel readline-devel sqlite-devel nfs-utils bind-utils wget dkms curl bzip2 net-tools
 
 sudo yum -y upgrade
 

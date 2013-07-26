@@ -24,5 +24,6 @@ Icon
 !.gitignore
 *~
 
-packer_cache
+packer_cache/
+output-virtualbox/
 *.box
