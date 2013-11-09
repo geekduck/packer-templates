@@ -1,29 +1,35 @@
 {
-  "builders":[{
-    "type": "virtualbox",
-    "guest_os_type": "RedHat_64",
-    "iso_url": "http://download.fedoraproject.org/pub/fedora/linux/releases/19/Fedora/x86_64/iso/Fedora-19-x86_64-netinst.iso",
-    "iso_checksum": "5c8cf418b5004c0b45d3d3895b280b4a",
-    "iso_checksum_type": "md5",
-    "ssh_username": "vagrant",
-    "ssh_password": "vagrant",
-    "ssh_wait_timeout": "12000s",
-    "vm_name": "box",
-    "http_directory": "./",
-    "boot_wait": "30s",
-    "boot_command":[
-      "<esc><wait>",
-      "linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg ",
-      "<enter><wait>"
+    "builders": [
+        {
+            "boot_command": [
+                "<esc><wait>",
+                "linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg ",
+                "<enter><wait>"
+            ],
+            "boot_wait": "30s",
+            "guest_os_type": "RedHat_64",
+            "http_directory": "./",
+            "iso_checksum": "5c8cf418b5004c0b45d3d3895b280b4a",
+            "iso_checksum_type": "md5",
+            "iso_url": "http://download.fedoraproject.org/pub/fedora/linux/releases/19/Fedora/x86_64/iso/Fedora-19-x86_64-netinst.iso",
+            "ssh_password": "vagrant",
+            "ssh_username": "vagrant",
+            "ssh_wait_timeout": "12000s",
+            "type": "virtualbox",
+            "vm_name": "box"
+        }
+    ],
+    "post-processors": [
+        {
+            "output": "./Fedora19.box",
+            "type": "vagrant",
+            "vagrantfile_template": "./Vagrantfile"
+        }
+    ],
+    "provisioners": [
+        {
+            "script": "setup.sh",
+            "type": "shell"
+        }
     ]
-  }],
-  "post-processors": [{
-    "type": "vagrant",
-    "output": "./Fedora19.box",
-    "vagrantfile_template": "./Vagrantfile"
-  }],
-  "provisioners": [{
-    "type": "shell",
-    "script": "setup.sh"
-  }]
 }

@@ -1,37 +1,43 @@
 {
-  "builders":[{
-    "type": "virtualbox",
-    "guest_os_type": "Ubuntu_64",
-    "iso_url": "http://releases.ubuntu.com/13.10/ubuntu-13.10-server-amd64.iso",
-    "iso_checksum": "4d1a8b720cdd14b76ed9410c63a00d0e",
-    "iso_checksum_type": "md5",
-    "ssh_username": "vagrant",
-    "ssh_password": "vagrant",
-    "ssh_wait_timeout": "6000s",
-    "vm_name": "box",
-    "http_directory": "./",
-    "boot_wait": "30s",
-    "boot_command":[
-      "<esc></esc><esc><enter><wait>",
-      "/install/vmlinuz noapic ",
-      "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
-      "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
-      "hostname={{ .Name }} ",
-      "fb=false debconf/frontend=noninteractive ",
-      "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
-      "keyboard-configuration/variant=USA console-setup/ask_detect=false ",
-      "initrd=/install/initrd.gz -- ",
-      "<enter><wait>"
+    "builders": [
+        {
+            "boot_command": [
+                "<esc></esc><esc><enter><wait>",
+                "/install/vmlinuz noapic ",
+                "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
+                "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+                "hostname={{ .Name }} ",
+                "fb=false debconf/frontend=noninteractive ",
+                "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
+                "keyboard-configuration/variant=USA console-setup/ask_detect=false ",
+                "initrd=/install/initrd.gz -- ",
+                "<enter><wait>"
+            ],
+            "boot_wait": "30s",
+            "guest_os_type": "Ubuntu_64",
+            "http_directory": "./",
+            "iso_checksum": "4d1a8b720cdd14b76ed9410c63a00d0e",
+            "iso_checksum_type": "md5",
+            "iso_url": "http://releases.ubuntu.com/13.10/ubuntu-13.10-server-amd64.iso",
+            "ssh_password": "vagrant",
+            "ssh_username": "vagrant",
+            "ssh_wait_timeout": "6000s",
+            "type": "virtualbox",
+            "vm_name": "box"
+        }
+    ],
+    "post-processors": [
+        {
+            "output": "./ubuntu-13.10-server-amd64.box",
+            "type": "vagrant",
+            "vagrantfile_template": "./Vagrantfile"
+        }
+    ],
+    "provisioners": [
+        {
+            "execute_command": "echo 'vagrant' | sudo -S sh '{{ .Path }}'",
+            "script": "setup.sh",
+            "type": "shell"
+        }
     ]
-  }],
-  "post-processors": [{
-    "type": "vagrant",
-    "output": "./ubuntu-13.10-server-amd64.box",
-    "vagrantfile_template": "./Vagrantfile"
-  }],
-  "provisioners": [{
-    "type": "shell",
-    "script": "setup.sh",
-    "execute_command": "echo 'vagrant' | sudo -S sh '{{ .Path }}'"
-  }]
 }
