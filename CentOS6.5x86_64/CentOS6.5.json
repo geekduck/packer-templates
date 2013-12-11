@@ -9,9 +9,9 @@
             "boot_wait": "30s",
             "guest_os_type": "RedHat_64",
             "http_directory": "./",
-            "iso_checksum": "4a5fa01c81cc300f4729136e28ebe600",
+            "iso_checksum": "0d9dc37b5dd4befa1c440d2174e88a87",
             "iso_checksum_type": "md5",
-            "iso_url": "http://mozilla.ftp.iij.ad.jp/pub/linux/centos/6/isos/x86_64/CentOS-6.4-x86_64-minimal.iso",
+            "iso_url": "http://mozilla.ftp.iij.ad.jp/pub/linux/centos/6/isos/x86_64/CentOS-6.5-x86_64-netinstall.iso",
             "ssh_password": "vagrant",
             "ssh_username": "vagrant",
             "ssh_wait_timeout": "6000s",
@@ -21,7 +21,7 @@
     ],
     "post-processors": [
         {
-            "output": "./CentOS6.4.box",
+            "output": "./CentOS6.5.box",
             "type": "vagrant",
             "vagrantfile_template": "./Vagrantfile"
         }

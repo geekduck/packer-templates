@@ -11,9 +11,9 @@ sudo sed -i "s/#UseDNS yes/UseDNS no/" /etc/ssh/sshd_config
 
 sudo yum -y install wget
 wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm
+wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
 wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
-sudo rpm --upgrade --verbose --hash epel-release-6-8.noarch.rpm  remi-release-6.rpm rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm
+sudo rpm --upgrade --verbose --hash epel-release-6-8.noarch.rpm  remi-release-6.rpm rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm
 
 sudo sed -i -e "s/enabled = 1/enabled = 0/g" /etc/yum.repos.d/rpmforge.repo
 sudo sed -i -e "s/enabled = 1/enabled = 0/g" /etc/yum.repos.d/epel.repo
