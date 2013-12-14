@@ -40,3 +40,8 @@ sudo umount /mnt
 #rm -rf /home/vagrant/VBoxGuestAdditions*.iso
 
 sudo /etc/rc.d/init.d/vboxadd setup
+
+# clean up redhat interface persistence
+sudo rm -f /etc/udev/rules.d/70-persistent-net.rules
+sudo sed -i 's/^HWADDR.*$//' /etc/sysconfig/network-scripts/ifcfg-eth0
+sudo sed -i 's/^UUID.*$//' /etc/sysconfig/network-scripts/ifcfg-eth0
