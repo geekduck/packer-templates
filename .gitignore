@@ -26,4 +26,5 @@ Icon
 
 packer_cache/
 output-virtualbox/
+output-virtualbox-iso/
 *.box
