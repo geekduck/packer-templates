@@ -22,8 +22,7 @@
     "post-processors": [
         {
             "output": "./CentOS6.5.box",
-            "type": "vagrant",
-            "vagrantfile_template": "./Vagrantfile"
+            "type": "vagrant"
         }
     ],
     "provisioners": [
