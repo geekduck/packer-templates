@@ -2,7 +2,7 @@ apt-get -y autoremove
 apt-get -y clean
 
 echo "cleaning up gest additions"
-rm -rf VBoxGuestAdditions_*.iso VBoxGuestAdditions_*.iso.?
+rm -rf VBoxGuestAdditions*.iso VBoxGuestAdditions*.iso.?
 
 echo "cleaning up dhcp leases"
 rm /var/lib/dhcp/*
