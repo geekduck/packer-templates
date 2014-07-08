@@ -8,6 +8,7 @@
             ],
             "boot_wait": "10s",
             "guest_os_type": "RedHat_64",
+            "headless": "true",
             "http_directory": "./",
             "iso_checksum": "96de4f38a2f07da51831153549c8bd0c",
             "iso_checksum_type": "md5",
