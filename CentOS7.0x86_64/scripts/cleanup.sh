@@ -5,5 +5,6 @@ rm -rf /tmp/rubygems-*
 
 # clean up redhat interface persistence
 sudo rm -f /etc/udev/rules.d/70-persistent-net.rules
-sudo sed -i 's/^HWADDR.*$//' /etc/sysconfig/network-scripts/ifcfg-eth0
-sudo sed -i 's/^UUID.*$//' /etc/sysconfig/network-scripts/ifcfg-eth0
+ETHDEV=`ls /etc/sysconfig/network-scripts/ifcfg-* | grep -v lo`
+sudo sed -i 's/^HWADDR.*$//' $ETHDEV
+sudo sed -i 's/^UUID.*$//' $ETHDEV
