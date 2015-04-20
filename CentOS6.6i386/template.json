@@ -7,12 +7,12 @@
         "<enter><wait>"
       ],
       "boot_wait": "10s",
-      "guest_os_type": "RedHat_64",
+      "guest_os_type": "RedHat",
       "headless": "true",
       "http_directory": "./",
-      "iso_checksum": "2342bc5ea72fc028972aa0f21cee28b4",
+      "iso_checksum": "d1d5017e14ac5d323fe2d0891bb2203a",
       "iso_checksum_type": "md5",
-      "iso_url": "http://ftp.jaist.ac.jp/pub/Linux/CentOS/6.6/isos/x86_64/CentOS-6.6-x86_64-netinstall.iso",
+      "iso_url": "http://ftp.jaist.ac.jp/pub/Linux/CentOS/6.6/isos/i386/CentOS-6.6-i386-netinstall.iso",
       "shutdown_command": "echo '/sbin/halt -h -p' > /tmp/shutdown.sh; echo 'vagrant'|sudo -S sh '/tmp/shutdown.sh'",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -39,10 +39,10 @@
     {
       "override": {
         "virtualbox-iso": {
-          "output": "./centos6-x86_64-virtualbox.box"
+          "output": "./centos6-i386-virtualbox.box"
         },
         "vmware": {
-          "output": "./centos6-x86_64-vmware.box"
+          "output": "./centos6-i386-vmware.box"
         }
       },
       "type": "vagrant"

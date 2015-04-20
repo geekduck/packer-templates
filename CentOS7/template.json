@@ -2,17 +2,17 @@
   "builders": [
     {
       "boot_command": [
-        "<esc><wait>",
-        "linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg ",
+        "<tab>",
+        "text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg",
         "<enter><wait>"
       ],
       "boot_wait": "10s",
       "guest_os_type": "RedHat_64",
       "headless": "true",
       "http_directory": "./",
-      "iso_checksum": "2342bc5ea72fc028972aa0f21cee28b4",
+      "iso_checksum": "111379a06402e1e445c6aeee9401d031",
       "iso_checksum_type": "md5",
-      "iso_url": "http://ftp.jaist.ac.jp/pub/Linux/CentOS/6.6/isos/x86_64/CentOS-6.6-x86_64-netinstall.iso",
+      "iso_url": "http://ftp.riken.jp/Linux/centos/7/isos/x86_64/CentOS-7-x86_64-NetInstall-1503.iso",
       "shutdown_command": "echo '/sbin/halt -h -p' > /tmp/shutdown.sh; echo 'vagrant'|sudo -S sh '/tmp/shutdown.sh'",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -39,10 +39,10 @@
     {
       "override": {
         "virtualbox-iso": {
-          "output": "./centos6-x86_64-virtualbox.box"
+          "output": "./centos7-x86_64-virtualbox.box"
         },
         "vmware": {
-          "output": "./centos6-x86_64-vmware.box"
+          "output": "./centos7-x86_64-vmware.box"
         }
       },
       "type": "vagrant"
