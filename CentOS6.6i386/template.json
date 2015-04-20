@@ -38,7 +38,7 @@
   "post-processors": [
     {
       "override": {
-        "virtualbox-iso": {
+        "virtualbox": {
           "output": "./centos6-i386-virtualbox.box"
         },
         "vmware": {
