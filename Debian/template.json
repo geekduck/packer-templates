@@ -68,9 +68,9 @@
     "ssh_username": "vagrant",
     "ssh_wait_timeout": "6000s",
     "vmx_data": {
-        "memsize": "512",
-        "numvcpus": "1",
-        "cpuid.coresPerSocket": "1"
+      "memsize": "512",
+      "numvcpus": "1",
+      "cpuid.coresPerSocket": "1"
     }
   }],
   "post-processors": [{
