@@ -19,6 +19,7 @@
         "ssh_port": 22,
         "ssh_username": "vagrant",
         "ssh_wait_timeout": "10000s",
+        "ssh_pty": "true",
         "vboxmanage": [
             ["modifyvm", "{{.Name}}", "--memory", "512"],
             ["modifyvm", "{{.Name}}", "--cpus", "1"]
