@@ -75,10 +75,10 @@
     }],
     "post-processors": [{
         "override": {
-            "virtualbox-iso": {
+            "virtualbox": {
                 "output": "./debian-server-amd64-virtualbox.box"
             },
-            "vmware-iso": {
+            "vmware": {
                 "output": "./debian-server-amd64-vmware.box"
             }
         },
