@@ -89,10 +89,10 @@
     }],
     "post-processors": [{
         "override": {
-            "virtualbox-iso": {
+            "virtualbox": {
                 "output": "./ubuntu-15.10-server-amd64-virtualbox.box"
             },
-            "vmware-iso": {
+            "vmware": {
                 "output": "./ubuntu-15.10-server-amd64-vmware.box"
             }
         },
