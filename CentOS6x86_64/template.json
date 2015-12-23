@@ -52,10 +52,10 @@
     }],
     "post-processors": [{
         "override": {
-            "virtualbox-iso": {
+            "virtualbox": {
                 "output": "./centos6-x86_64-virtualbox.box"
             },
-            "vmware-iso": {
+            "vmware": {
                 "output": "./centos6-x86_64-vmware.box"
             }
         },
