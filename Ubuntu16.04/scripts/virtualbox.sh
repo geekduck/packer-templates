@@ -1,1 +1,1 @@
-apt-get -y install virtualbox-guest-utils
+apt-get -y install virtualbox-guest-dkms
