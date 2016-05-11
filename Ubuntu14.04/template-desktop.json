@@ -21,7 +21,7 @@
             " netcfg/get_hostname=ubuntu-1404<wait>",
             " netcfg/get_domain=vagrantup.com<wait>",
             " noapic<wait>",
-            " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg<wait>",
+            " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed-desktop.cfg<wait>",
             " -- <wait>",
             "<enter><wait>"
         ],

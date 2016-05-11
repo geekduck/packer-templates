@@ -3,7 +3,7 @@
         "type": "virtualbox-iso",
         "boot_command": [
             "<esc><wait>",
-            "linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg",
+            "linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks-desktop.cfg",
             "<enter><wait>"
         ],
         "boot_wait": "10s",

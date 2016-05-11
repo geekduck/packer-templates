@@ -2,8 +2,8 @@
     "builders": [{
         "type": "virtualbox-iso",
         "boot_command": [
-            "<esc><wait>",
-            "linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg",
+            "<tab>",
+            "text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks-desktop.cfg",
             "<enter><wait>"
         ],
         "boot_wait": "10s",
@@ -11,9 +11,9 @@
         "guest_os_type": "RedHat_64",
         "headless": "true",
         "http_directory": "./",
-        "iso_checksum": "171ce654ec06040d096daf75934ca8ca",
+        "iso_checksum": "99d305fa40ec9e28ef8450c3bcc45f85",
         "iso_checksum_type": "md5",
-        "iso_url": "http://ftp.jaist.ac.jp/pub/Linux/CentOS/6.7/isos/x86_64/CentOS-6.7-x86_64-netinstall.iso",
+        "iso_url": "http://ftp.riken.jp/Linux/centos/7/isos/x86_64/CentOS-7-x86_64-NetInstall-1511.iso",
         "shutdown_command": "echo '/sbin/halt -h -p' > /tmp/shutdown.sh; echo 'vagrant'|sudo -S sh '/tmp/shutdown.sh'",
         "ssh_password": "vagrant",
         "ssh_port": 22,
@@ -27,8 +27,8 @@
     }, {
         "type": "vmware-iso",
         "boot_command": [
-            "<esc><wait>",
-            "linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg ",
+            "<tab>",
+            "text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg",
             "<enter><wait>"
         ],
         "boot_wait": "10s",
@@ -36,9 +36,9 @@
         "guest_os_type": "linux",
         "headless": "true",
         "http_directory": "./",
-        "iso_checksum": "171ce654ec06040d096daf75934ca8ca",
+        "iso_checksum": "111379a06402e1e445c6aeee9401d031",
         "iso_checksum_type": "md5",
-        "iso_url": "http://ftp.jaist.ac.jp/pub/Linux/CentOS/6.7/isos/x86_64/CentOS-6.7-x86_64-netinstall.iso",
+        "iso_url": "http://ftp.riken.jp/Linux/centos/7/isos/x86_64/CentOS-7-x86_64-NetInstall-1503.iso",
         "shutdown_command": "echo '/sbin/halt -h -p' > /tmp/shutdown.sh; echo 'vagrant'|sudo -S sh '/tmp/shutdown.sh'",
         "ssh_password": "vagrant",
         "ssh_port": 22,
@@ -53,10 +53,10 @@
     "post-processors": [{
         "override": {
             "virtualbox": {
-                "output": "./centos6-x86_64-virtualbox.box"
+                "output": "./centos7-x86_64-virtualbox.box"
             },
             "vmware": {
-                "output": "./centos6-x86_64-vmware.box"
+                "output": "./centos7-x86_64-vmware.box"
             }
         },
         "type": "vagrant"
