@@ -28,7 +28,7 @@
         "type": "vmware-iso",
         "boot_command": [
             "<esc><wait>",
-            "linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg ",
+            "linux ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks-desktop.cfg",
             "<enter><wait>"
         ],
         "boot_wait": "10s",
@@ -53,10 +53,10 @@
     "post-processors": [{
         "override": {
             "virtualbox": {
-                "output": "./centos6-x86_64-virtualbox.box"
+                "output": "./centos6-x86_64-virtualbox_desktop.box"
             },
             "vmware": {
-                "output": "./centos6-x86_64-vmware.box"
+                "output": "./centos6-x86_64-vmware_desktop.box"
             }
         },
         "type": "vagrant"
