@@ -70,7 +70,7 @@
                     "scripts/vagrant.sh",
                     "scripts/virtualbox.sh",
                     "scripts/desktop.sh",
-                    "scripts/cleanup.sh",
+                    "scripts/cleanup-desktop.sh",
                     "scripts/zerodisk.sh"
                 ]
             },
@@ -80,7 +80,7 @@
                     "scripts/vagrant.sh",
                     "scripts/vmware.sh",
                     "scripts/desktop.sh",
-                    "scripts/cleanup.sh",
+                    "scripts/cleanup-desktop.sh",
                     "scripts/zerodisk.sh"
                 ]
             }
