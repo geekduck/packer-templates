@@ -108,6 +108,7 @@
                     "scripts/base.sh",
                     "scripts/vagrant.sh",
                     "scripts/virtualbox.sh",
+                    "scripts/network.sh",
                     "scripts/cleanup.sh",
                     "scripts/zerodisk.sh"
                 ]
