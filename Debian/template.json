@@ -23,16 +23,16 @@
         "guest_os_type": "Debian_64",
         "headless": "true",
         "http_directory": "./",
-        "iso_checksum": "e494e78d531352f0f3fdb210f13f7577",
+        "iso_checksum": "f31779fcca35f5ce9833a9661a9bd5bd",
         "iso_checksum_type": "md5",
-        "iso_url": "http://ftp.jaist.ac.jp/debian-cd/current/amd64/iso-cd/debian-9.9.0-amd64-netinst.iso",
+        "iso_url": "http://ftp.jaist.ac.jp/debian-cd/current/amd64/iso-cd/debian-10.0.0-amd64-netinst.iso",
         "shutdown_command": "echo 'vagrant'|sudo -S /sbin/shutdown -hP now",
         "ssh_password": "vagrant",
         "ssh_port": 22,
         "ssh_username": "vagrant",
         "ssh_wait_timeout": "6000s",
         "vboxmanage": [
-            ["modifyvm", "{{.Name}}", "--memory", "512"],
+            ["modifyvm", "{{.Name}}", "--memory", "768"],
             ["modifyvm", "{{.Name}}", "--cpus", "1"]
         ]
     }, {
@@ -52,6 +52,7 @@
             " debconf/frontend=noninteractive <wait>",
             " console-setup/ask_detect=false <wait>",
             " console-keymaps-at/keymap=us <wait>",
+            " lowmem=1",
             "<enter><wait>"
         ],
         "boot_wait": "10s",
@@ -59,16 +60,16 @@
         "guest_os_type": "linux",
         "headless": "true",
         "http_directory": "./",
-        "iso_checksum": "e494e78d531352f0f3fdb210f13f7577",
+        "iso_checksum": "f31779fcca35f5ce9833a9661a9bd5bd",
         "iso_checksum_type": "md5",
-        "iso_url": "http://ftp.jaist.ac.jp/debian-cd/current/amd64/iso-cd/debian-9.9.0-amd64-netinst.iso",
+        "iso_url": "http://ftp.jaist.ac.jp/debian-cd/current/amd64/iso-cd/debian-10.0.0-amd64-netinst.iso",
         "shutdown_command": "echo 'vagrant'|sudo -S /sbin/shutdown -hP now",
         "ssh_password": "vagrant",
         "ssh_port": 22,
         "ssh_username": "vagrant",
         "ssh_wait_timeout": "6000s",
         "vmx_data": {
-            "memsize": "512",
+            "memsize": "768",
             "numvcpus": "1",
             "cpuid.coresPerSocket": "1"
         }
